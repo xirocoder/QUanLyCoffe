@@ -96,7 +96,7 @@ namespace QuanLyQuanCafe
         }
         private void btn_Click(object sender, EventArgs e)
         {
-            showTenMon.Controls.Clear();
+            
             Button btn = sender as Button;
             // tạo nhãn ghi tên món
             Label label = new Label()
@@ -127,9 +127,23 @@ namespace QuanLyQuanCafe
                 Font = firstTextSl.Font
             };
             textBox.TextChanged += textBox_TextChanged;
+            // thay đổi thuộc tính của text bõ bên dưới:
+            if(textBoxes.Count >= 1)
+            {
+                if(textBoxes[textBoxes.Count - 1].Text == "")
+                {
+                    MessageBox.Show("vui lòng nhập số lượng");
+                    return;
+                }
+                else
+                {
+                    textBoxes[textBoxes.Count - 1].ReadOnly = true;
+                }
+            }
             labels.Add(label);
             labelTiens.Add(labelTien);
             textBoxes.Add(textBox);
+            showTenMon.Controls.Clear();
             for (int i = labels.Count; i>0; i--)
             {
                 showTenMon.Controls.Add(labels[i-1]); // bug in this line

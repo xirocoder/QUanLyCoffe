@@ -122,6 +122,7 @@
             this.firstTextSl.Location = new System.Drawing.Point(202, 3);
             this.firstTextSl.Multiline = true;
             this.firstTextSl.Name = "firstTextSl";
+            this.firstTextSl.ReadOnly = true;
             this.firstTextSl.Size = new System.Drawing.Size(64, 43);
             this.firstTextSl.TabIndex = 3;
             this.firstTextSl.Text = "3";
