@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTable));
             this.titleTable = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.nhapHoaDon = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.showTenMon = new System.Windows.Forms.FlowLayoutPanel();
             this.firstLabel = new System.Windows.Forms.Label();
@@ -47,6 +47,7 @@
             this.textTimKiem = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.labelNV = new System.Windows.Forms.Label();
+            this.btnNhapHD = new System.Windows.Forms.Button();
             this.showTenMon.SuspendLayout();
             this.showButton.SuspendLayout();
             this.showTien.SuspendLayout();
@@ -74,16 +75,16 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Thành tiền";
             // 
-            // label2
+            // nhapHoaDon
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(635, 366);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(159, 25);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Nhập hóa đơn";
+            this.nhapHoaDon.AutoSize = true;
+            this.nhapHoaDon.BackColor = System.Drawing.Color.Transparent;
+            this.nhapHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nhapHoaDon.Location = new System.Drawing.Point(635, 366);
+            this.nhapHoaDon.Name = "nhapHoaDon";
+            this.nhapHoaDon.Size = new System.Drawing.Size(159, 25);
+            this.nhapHoaDon.TabIndex = 5;
+            this.nhapHoaDon.Text = "Nhập hóa đơn";
             // 
             // textBox2
             // 
@@ -252,6 +253,20 @@
             this.labelNV.TabIndex = 13;
             this.labelNV.Text = "Thu ngân sáng";
             // 
+            // btnNhapHD
+            // 
+            this.btnNhapHD.BackColor = System.Drawing.Color.Transparent;
+            this.btnNhapHD.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNhapHD.BackgroundImage")));
+            this.btnNhapHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNhapHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhapHD.Location = new System.Drawing.Point(631, 362);
+            this.btnNhapHD.Name = "btnNhapHD";
+            this.btnNhapHD.Size = new System.Drawing.Size(163, 29);
+            this.btnNhapHD.TabIndex = 14;
+            this.btnNhapHD.Text = "Nhập hóa đơn";
+            this.btnNhapHD.UseVisualStyleBackColor = false;
+            this.btnNhapHD.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // FormTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,6 +275,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(855, 450);
+            this.Controls.Add(this.btnNhapHD);
             this.Controls.Add(this.labelNV);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textTimKiem);
@@ -269,7 +285,7 @@
             this.Controls.Add(this.showButton);
             this.Controls.Add(this.showTenMon);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.nhapHoaDon);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.titleTable);
             this.DoubleBuffered = true;
@@ -291,7 +307,7 @@
 
         private System.Windows.Forms.Label titleTable;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label nhapHoaDon;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.FlowLayoutPanel showTenMon;
         private System.Windows.Forms.FlowLayoutPanel showButton;
@@ -307,5 +323,6 @@
         private System.Windows.Forms.TextBox textTimKiem;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labelNV;
+        private System.Windows.Forms.Button btnNhapHD;
     }
 }

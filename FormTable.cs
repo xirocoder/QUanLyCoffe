@@ -18,6 +18,7 @@ namespace QuanLyQuanCafe
         }
         private void btn_click(object sender ,EventArgs e)
         {
+            
             MessageBox.Show("sss");
         }
         private void FormTable_Load(object sender, EventArgs e)
@@ -42,10 +43,13 @@ namespace QuanLyQuanCafe
             labelTiens.Clear();
             textBoxes.Clear();
             labelNV.Text = InfoFormTable.infoForm;
+
+
             if(CMenu.menus.Count == 0)
             {
                 CMenu.addMenu();
             }
+            MessageBox.Show("loaded");
         }
         private void drawButton()
         {
@@ -87,7 +91,8 @@ namespace QuanLyQuanCafe
                         Font = button1.Font,
                         Height = 33,
                         Width = 101,
-                        FlatStyle = FlatStyle.Popup
+                        FlatStyle = FlatStyle.Popup,
+                        AutoSize = true
                     };
                     btn.Click += btn_Click;
                     labelMon.Controls.Add(btn);
@@ -144,11 +149,15 @@ namespace QuanLyQuanCafe
             labelTiens.Add(labelTien);
             textBoxes.Add(textBox);
             showTenMon.Controls.Clear();
-            for (int i = labels.Count; i>0; i--)
+            showInfo(showTenMon,showTien);
+        }
+        public static void showInfo(FlowLayoutPanel showTenMon, FlowLayoutPanel showTien)
+        {
+            for (int i = labels.Count; i > 0; i--)
             {
-                showTenMon.Controls.Add(labels[i-1]); // bug in this line
-                showTenMon.Controls.Add(textBoxes[i-1]);
-                showTien.Controls.Add(labelTiens[i-1]);
+                showTenMon.Controls.Add(labels[i - 1]); // bug in this line
+                showTenMon.Controls.Add(textBoxes[i - 1]);
+                showTien.Controls.Add(labelTiens[i - 1]);
             }
         }
         private void button2_Click(object sender, EventArgs e)
@@ -209,11 +218,6 @@ namespace QuanLyQuanCafe
             publicType = button3.Text;
             drawmon();
         }
-        public static List<Label> labels = new List<Label>();
-        public static List<Label> labelTiens = new List<Label>();
-        public static List<TextBox> textBoxes = new List<TextBox>();
-        public static int tongTien = 0;
-        public static string publicType;
 
         private void FormTable_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -240,5 +244,25 @@ namespace QuanLyQuanCafe
                 }
             }
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            textBoxes[textBoxes.Count - 1].ReadOnly = true;  // chuyển hóa nút cuối ko cho sửa
+            FormHoaDon formHoaDon = new FormHoaDon();
+            formHoaDon.getTenMon = labels;
+            formHoaDon.getSoLuong = textBoxes;
+            formHoaDon.getTien = labelTiens;
+            formHoaDon.tongTien = labelThanhTien.Text;
+            this.Hide();
+            formHoaDon.ShowDialog();
+            this.Show();
+            showInfo(showTenMon, showTien);
+        }
+
+        public static List<Label> labels = new List<Label>();
+        public static List<Label> labelTiens = new List<Label>();
+        public static List<TextBox> textBoxes = new List<TextBox>();
+        public static int tongTien = 0;
+        public static string publicType;
     }
 }

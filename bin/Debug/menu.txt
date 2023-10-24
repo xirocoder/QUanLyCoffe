@@ -3,3 +3,5 @@ ca phe:COFFE:10000
 kem:TOPPING:30000
 xoai:TRÁI CÂY:20000
 trà chanh:COFFE:20000
+bạc xỉu:COFFE:30000
+bơ:TRÁI CÂY:10000
